@@ -1,0 +1,26 @@
+name: Deploy to VM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup SSH and Deploy
+      env:
+        VM_HOST: ${{ secrets.VM_HOST }}
+        VM_USER: ${{ secrets.VM_USER }}
+        VM_PASSWORD: ${{ secrets.VM_PASSWORD }}
+      run: |
+        # Install necessary tools
+        cd kube
+        sudo git pull
+  
+        EOF
