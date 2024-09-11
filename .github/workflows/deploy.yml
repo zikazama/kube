@@ -20,7 +20,7 @@ jobs:
         VM_PASSWORD: ${{ secrets.VM_PASSWORD }}
       run: |
         # Install necessary tools
-        cd 
+        ls
         cd kube
         sudo git pull
   
