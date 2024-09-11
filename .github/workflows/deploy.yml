@@ -22,4 +22,3 @@ jobs:
         # Install necessary tools
         sudo git pull
   
-        EOF
